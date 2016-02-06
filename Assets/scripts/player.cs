@@ -19,7 +19,7 @@ public class player : MonoBehaviour
 		{
 			this.game.updateGame();
 			this.game_input.moveMainCharacter( transform );
-			GameObject.Find( "score" ).guiText.text = this.game.getScore().ToString();
+			GameObject.Find( "score" ).GetComponent<GUIText>().text = this.game.getScore().ToString();
 		}
 	}
 	

@@ -19,12 +19,8 @@ public class Game: MonoBehaviour
 
 	private void testGameOver()
 	{
-		GameObject ball =  GameObject.Find( "ball" );
-		GameObject player =  GameObject.Find( "player" );
-
-		if( ball.rigidbody.position.y < player.rigidbody.position.y + 1.5f )
+		if(this.game_over )
 		{
-			this.game_over = true;
 			setScoreRecord();
 		}
 	}
@@ -64,5 +60,10 @@ public class Game: MonoBehaviour
 	public int getScore()
 	{
 		return this.score;	
+	}
+
+	public void gameOver()
+	{
+		this.game_over = true;
 	}
 }

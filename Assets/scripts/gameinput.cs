@@ -49,8 +49,8 @@ public class GameInput
 		Vector3 pos = character.position;
 		GameObject left = (GameObject) GameObject.Find( "left" );
 		GameObject right = (GameObject) GameObject.Find( "right" );
-		if ( ( character.rigidbody.position.x >= left.rigidbody.position.x + 1f && direction < 0 ) 
-		    || character.rigidbody.position.x <= right.rigidbody.position.x - 1f && direction > 0 )
+		if ( ( character.GetComponent<Rigidbody>().position.x >= left.GetComponent<Rigidbody>().position.x + 1f && direction < 0 ) 
+		    || character.GetComponent<Rigidbody>().position.x <= right.GetComponent<Rigidbody>().position.x - 1f && direction > 0 )
 		{
 			pos.x += MOVE_VELOCITY * direction;
 		}
