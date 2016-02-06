@@ -45,6 +45,8 @@ public class player : MonoBehaviour
 		Texture2D right = (Texture2D)(Resources.Load( "right" ));
 		if ( !this.game.isStarted() )
 		{
+			this.admob.showBanners();
+			this.admob.showInterstitial();
 			int best_score = PlayerPrefs.GetInt( "best_score" );
 			int last_score = PlayerPrefs.GetInt( "last_score" );
 
