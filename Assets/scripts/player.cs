@@ -5,12 +5,15 @@ public class player : MonoBehaviour
 {
 	private GameInput game_input;
 	public Game game;
-
-	// Use this for initialization
+	private AdMob admob;
+	
 	void Start () 
 	{
 		this.game_input =  new GameInput();
 		this.game = new Game();
+		this.admob = new AdMob();
+		this.admob.requestBanner();
+		this.admob.requestBannerInterstitial();
 	}
 
 	void Update()
@@ -20,6 +23,10 @@ public class player : MonoBehaviour
 			this.game.updateGame();
 			this.game_input.moveMainCharacter( transform );
 			GameObject.Find( "score" ).GetComponent<GUIText>().text = this.game.getScore().ToString();
+		}
+		if(game.isStarted())
+		{
+			this.admob.hideBanners();
 		}
 	}
 	
@@ -74,5 +81,4 @@ public class player : MonoBehaviour
 			}
 		}
 	}
-
 }
